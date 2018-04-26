@@ -1,26 +1,31 @@
 import React, { Component } from 'react';
+import axios from 'axios';
+import { BASE_URL, TARGET_URL, APP_ID, metaTagData } from './config'
 import './App.css';
 
 /*
 App - 
-  UrlInput
+  Url
   SocialCard
 
-url 입력 - UrlInput
+url 입력 - Url (v)
 fetch - App
 socialcard 보여주기 - SocialCard
 
 */
-const exUrl = "http://opengraph.io/api/1.1/site/http%3A%2F%2Fdavidwalsh.name?app_id=5ae0777b9b03547407c63e6d";
+const exUrl = "http://davidwalsh.name";
 
-const UrlInput = ({value, onChange}) => 
-  <div className="url-input">
-    <input 
-      type="text" 
-      placeholder="URL을 입력하세요."
-      value={value}
-      onChange={onChange}
-      />  
+const Url = ({value, onChange, onSubmit}) => 
+  <div className="url">
+    <form onSubmit={onSubmit}>
+      <input 
+        type="text" 
+        placeholder="URL을 입력하세요."
+        value={value}
+        onChange={onChange}
+        />
+      <button type="submit">Submit</button>
+    </form>
   </div>
 
 
@@ -34,24 +39,49 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-      url:'',
+      url:exUrl,
+      metaTags:{},
     }
 
+    this.onUrlSubmit = this.onUrlSubmit.bind(this);
     this.onUrlChange = this.onUrlChange.bind(this);
+    this.fetchOpenGraphTag = this.fetchOpenGraphTag.bind(this);
   }
 
   onUrlChange(event){
     this.setState({ url: event.target.value });
   }
 
-  render() { 
+  onUrlSubmit(event){
     const { url } = this.state;
+    const fullUrl = `${BASE_URL}${url}${APP_ID}`;
+    this.fetchOpenGraphTag(fullUrl);
+
+    event.preventDefault();
+  }
+
+  fetchOpenGraphTag(url){
+    // axios.get(url)
+    //   .then(response=> {
+    //     console.log(response['data']['openGraph']);
+    //     this.setState({metaTags:response['data']['openGraph']})
+    //   })
+    //   .catch(error=> { console.log(error) });
+    
+    setTimeout(()=>{ this.setState({ metaTags: metaTagData }) }, 1000);
+  }
+  
+  render() { 
+    const { url, metaTags } = this.state;
+    console.log( metaTags );
     return (
       <div className="App">
-        <UrlInput 
+        <Url 
           value={exUrl}
+          onSubmit={this.onUrlSubmit}
           onChange={this.onUrlChange}>
-        </UrlInput>
+        </Url>
+
         <SocialCard></SocialCard>
       </div> 
     );
