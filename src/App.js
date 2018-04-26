@@ -17,26 +17,32 @@ socialcard 보여주기 - SocialCard
 const Url = ({value, onChange, onSubmit}) => 
   <div className="url">
     <form onSubmit={onSubmit}>
-      <input 
-        type="text" 
-        placeholder="URL을 입력하세요."
-        value={value}
-        onChange={onChange}
-        />
-      <button type="submit">Submit</button>
+      <div className="input-group">
+        <input 
+          type="text" 
+          placeholder="URL을 입력하세요."
+          value={value}
+          onChange={onChange}
+          className="form-control"
+          />
+        <div className="input-group-append">
+          <button className="btn btn-outline-secondary" type="submit">Submit</button>
+        </div>
+      </div>  
     </form>
   </div>
 
 
 const SocialCard = ({metaTags}) => 
-  <div className="card social-card" >
-    <img className="card-img-top" src={metaTags.image.url} alt="Card image cap" />
-    <div className="card-body">
-      <h5 className="card-title">{metaTags.title}</h5>
-      <p className="card-text">{metaTags.description} </p>
+  <div className="card-wrapper">
+    <div className="card social-card" >
+      <img className="card-img-top" src={metaTags.image.url} alt="Card image cap" />
+      <div className="card-body">
+        <h5 className="card-title">{metaTags.title}</h5>
+        <p className="card-text">{metaTags.description} </p>
+      </div>
     </div>
   </div>
-
 
 
 class App extends Component {
@@ -65,20 +71,20 @@ class App extends Component {
   }
 
   fetchOpenGraphTag(url){
-    axios.get(url)
-      .then(response=> {
-        console.log(response['data']['openGraph']);
-        this.setState({metaTags:response['data']['openGraph']})
-      })
-      .catch(error=> { console.log(error) });
+    // axios.get(url)
+    //   .then(response=> {
+    //     console.log(response['data']['openGraph']);
+    //     this.setState({metaTags:response['data']['openGraph']})
+    //   })
+    //   .catch(error=> { console.log(error) });
     
-    // setTimeout(()=>{ this.setState({ metaTags: metaTagData }) }, 1000);
+    setTimeout(()=>{ this.setState({ metaTags: metaTagData }) }, 1000);
   }
   
   render() { 
     const { url, metaTags } = this.state;
     return (
-      <div className="App">
+      <div className="App container">
         <Url 
           value={url}
           onSubmit={this.onUrlSubmit}

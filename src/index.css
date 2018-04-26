@@ -1,5 +1,15 @@
 body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+}
+.card-wrapper{
+	margin-top: 10px;
+}
+.social-card{
+	width:492px;
+}
+
+.social-card img{
+	height:257px;
 }
