@@ -13,7 +13,6 @@ fetch - App
 socialcard 보여주기 - SocialCard
 
 */
-const exUrl = "http://davidwalsh.name";
 
 const Url = ({value, onChange, onSubmit}) => 
   <div className="url">
@@ -29,18 +28,23 @@ const Url = ({value, onChange, onSubmit}) =>
   </div>
 
 
-const SocialCard = () => 
-  <div className="social-card">
-    SocialCard
+const SocialCard = ({metaTags}) => 
+  <div className="card social-card" >
+    <img className="card-img-top" src={metaTags.image.url} alt="Card image cap" />
+    <div className="card-body">
+      <h5 className="card-title">{metaTags.title}</h5>
+      <p className="card-text">{metaTags.description} </p>
+    </div>
   </div>
+
 
 
 class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-      url:exUrl,
-      metaTags:{},
+      url:TARGET_URL,
+      metaTags:{}
     }
 
     this.onUrlSubmit = this.onUrlSubmit.bind(this);
@@ -61,28 +65,30 @@ class App extends Component {
   }
 
   fetchOpenGraphTag(url){
-    // axios.get(url)
-    //   .then(response=> {
-    //     console.log(response['data']['openGraph']);
-    //     this.setState({metaTags:response['data']['openGraph']})
-    //   })
-    //   .catch(error=> { console.log(error) });
+    axios.get(url)
+      .then(response=> {
+        console.log(response['data']['openGraph']);
+        this.setState({metaTags:response['data']['openGraph']})
+      })
+      .catch(error=> { console.log(error) });
     
-    setTimeout(()=>{ this.setState({ metaTags: metaTagData }) }, 1000);
+    // setTimeout(()=>{ this.setState({ metaTags: metaTagData }) }, 1000);
   }
   
   render() { 
     const { url, metaTags } = this.state;
-    console.log( metaTags );
     return (
       <div className="App">
         <Url 
-          value={exUrl}
+          value={url}
           onSubmit={this.onUrlSubmit}
           onChange={this.onUrlChange}>
         </Url>
-
-        <SocialCard></SocialCard>
+        { metaTags.title ? 
+          <SocialCard metaTags={metaTags}></SocialCard>
+          :
+          <div></div>
+        }
       </div> 
     );
   }
