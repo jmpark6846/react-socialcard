@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UrlSearch has a valid snapshot 1`] = `
+<div
+  className="url"
+>
+  <form
+    onSubmit={undefined}
+  >
+    <div
+      className="input-group"
+    >
+      <input
+        className="form-control"
+        onChange={undefined}
+        placeholder="URL을 입력하세요."
+        type="text"
+        value={undefined}
+      />
+      <div
+        className="input-group-append"
+      >
+        <button
+          className="btn btn-outline-secondary"
+          type="submit"
+        >
+          Submit
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+`;
