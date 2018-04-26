@@ -1,4 +1,3 @@
-
 const BASE_URL = "http://opengraph.io/api/1.1/site/";
 const TARGET_URL = "https://www.robinwieruch.de/learn-react-before-using-redux/";
 const APP_ID = "?app_id=5ae0777b9b03547407c63e6d";

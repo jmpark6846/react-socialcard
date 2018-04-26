@@ -1,0 +1,32 @@
+
+.card-wrapper{
+	margin-top: 10px;
+}
+.social-card{
+	width:492px;
+}
+
+.social-card:hover{
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+}
+
+.social-card img{
+	height:257px;
+}
+
+.social-card .card-text{
+	font-size: 13px;
+	color: darkslategray;
+}
+
+.card-body {
+    padding: 10px 15px;
+}
+
+.card-title {
+    margin-bottom: 7px;
+}
+
+.card-content{
+	color:black;
+}

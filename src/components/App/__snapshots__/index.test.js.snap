@@ -1,0 +1,112 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App has a valid snapshot 1`] = `
+<div
+  className="App container"
+>
+  <div
+    className="url"
+  >
+    <form
+      onSubmit={[Function]}
+    >
+      <div
+        className="input-group"
+      >
+        <input
+          className="form-control"
+          onChange={[Function]}
+          placeholder="URL을 입력하세요."
+          type="text"
+          value="https://www.robinwieruch.de/learn-react-before-using-redux/"
+        />
+        <div
+          className="input-group-append"
+        >
+          <button
+            className="btn btn-outline-secondary"
+            type="submit"
+          >
+            Submit
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div />
+</div>
+`;
+
+exports[`App has a valid snapshot 2`] = `
+<div
+  className="App container"
+>
+  <div
+    className="url"
+  >
+    <form
+      onSubmit={[Function]}
+    >
+      <div
+        className="input-group"
+      >
+        <input
+          className="form-control"
+          onChange={[Function]}
+          placeholder="URL을 입력하세요."
+          type="text"
+          value="https://www.robinwieruch.de/learn-react-before-using-redux/"
+        />
+        <div
+          className="input-group-append"
+        >
+          <button
+            className="btn btn-outline-secondary"
+            type="submit"
+          >
+            Submit
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div />
+</div>
+`;
+
+exports[`App has a valid snapshot 3`] = `
+<div
+  className="App container"
+>
+  <div
+    className="url"
+  >
+    <form
+      onSubmit={[Function]}
+    >
+      <div
+        className="input-group"
+      >
+        <input
+          className="form-control"
+          onChange={[Function]}
+          placeholder="URL을 입력하세요."
+          type="text"
+          value="https://www.robinwieruch.de/learn-react-before-using-redux/"
+        />
+        <div
+          className="input-group-append"
+        >
+          <button
+            className="btn btn-outline-secondary"
+            type="submit"
+          >
+            Submit
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div />
+</div>
+`;
