@@ -5,14 +5,14 @@ exports[`UrlSearch has a valid snapshot 1`] = `
   className="url"
 >
   <form
-    onSubmit={undefined}
+    onSubmit={[Function]}
   >
     <div
       className="input-group"
     >
       <input
         className="form-control"
-        onChange={undefined}
+        onChange={[Function]}
         placeholder="URL을 입력하세요."
         type="text"
         value={undefined}

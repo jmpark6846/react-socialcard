@@ -4,6 +4,7 @@ import renderer from 'react-test-renderer';
 import App from '.';
 
 describe('App', ()=>{
+
 	it('renders without crashing', () => {
 	  const div = document.createElement('div');
 	  ReactDOM.render(<App />, div);
@@ -15,4 +16,6 @@ describe('App', ()=>{
 		let tree = component.toJSON();
 		expect(tree).toMatchSnapshot();
 	});
+
 });
+
