@@ -6,7 +6,7 @@ const UrlSearch = ({value, onChange, onSubmit}) =>
     <form onSubmit={onSubmit}>
       <div className="input-group">
         <input 
-          type="text" 
+          type="url" 
           placeholder="URL을 입력하세요."
           value={value}
           onChange={onChange}
