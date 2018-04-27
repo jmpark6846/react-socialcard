@@ -6,6 +6,9 @@
  ```
  npm install
  npm start
+
+ # 테스트
+ npm test
  ```
  
 ## 소셜 카드란?

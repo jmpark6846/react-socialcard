@@ -14,7 +14,7 @@ exports[`UrlSearch has a valid snapshot 1`] = `
         className="form-control"
         onChange={[Function]}
         placeholder="URL을 입력하세요."
-        type="text"
+        type="url"
         value={undefined}
       />
       <div
