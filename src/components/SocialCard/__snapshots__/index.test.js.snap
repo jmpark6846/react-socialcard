@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SocialCard has a valid snapshot 1`] = `
+<div
+  className="card-wrapper"
+>
+  <div
+    className="card social-card shadow-sm"
+  >
+    <a
+      href="https://www.robinwieruch.de/learn-react-before-using-redux/"
+      target="_blank"
+    >
+      <div
+        className="card-content"
+      >
+        <img
+          alt="Card image cap"
+          className="card-img-top"
+          src="https://www.robinwieruch.de/img/posts/learn-react-before-using-redux/banner_640.jpg"
+        />
+        <div
+          className="card-body"
+        >
+          <h5
+            className="card-title"
+          >
+            8 things to learn in React before using Redux - RWieruch
+          </h5>
+          <p
+            className="card-text"
+          >
+            Facts about React that should be known before using Redux (or MobX). Most important: Learn React first, then opt-in Redux but only if you need it. There are various techniques in React.js for scaling your local state management. Only if these are not sufficient, use a library like Redux ...
+             
+          </p>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>
+`;

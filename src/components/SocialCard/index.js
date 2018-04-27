@@ -18,7 +18,7 @@ const SocialCard = ({metaTags}) =>
   </div>
 
 SocialCard.propTypes = {
-  metaTags: PropTypes.object
+  metaTags: PropTypes.object.isRequired
 }
 
 export default SocialCard;
